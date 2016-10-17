@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">testHello</string>
+    <string name="button_name">登录</string>
+</resources>
