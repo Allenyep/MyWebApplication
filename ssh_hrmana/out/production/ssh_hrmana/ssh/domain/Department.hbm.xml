@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+
+    <class name="ssh.domain.Department" table="department">
+        <id name="did" column="did">
+            <generator class="native"/>
+        </id>
+        
+        <property name="dname" column="dname"/>
+        <property name="ddesc" column="ddesc" length="100"/>
+
+        <!--关联关系映射-->
+        <set name="employees">
+            <key column="dno"/>
+            <one-to-many class="ssh.domain.Employee"/>
+        </set>
+
+    </class>
+
+</hibernate-mapping>

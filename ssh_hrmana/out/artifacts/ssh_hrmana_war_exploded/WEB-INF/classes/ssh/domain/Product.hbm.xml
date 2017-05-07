@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+
+    <class name="ssh.domain.Product" table="product">
+        <id name="pid" column="pid">
+            <generator class="native"/>
+        </id>
+
+        <property name="pname" length="20" column="pnanme"/>
+        <property name="price" type="java.lang.Double" column="price"/>
+
+    </class>
+
+</hibernate-mapping>
