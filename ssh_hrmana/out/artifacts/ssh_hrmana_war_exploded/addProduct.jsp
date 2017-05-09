@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>保存商品</h1>
-<s:form action="product_save.action" method="POST" >
+<s:form  method="POST" >
     <table border="1">
         <tr>
             <td>商品名称
@@ -28,5 +28,6 @@
         </tr>
     </table>
 </s:form>
+<h1>欢迎你：<s:property value="#session.existEmployee.ename"/> </h1>
 </body>
 </html>

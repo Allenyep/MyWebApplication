@@ -28,12 +28,18 @@
     <bean id="employeeService" class="ssh.service.Impl.EmployeeServiceImpl">
         <property name="employeeDao" ref="employeeDao"/>
     </bean>
+    <bean id="departmentService" class="ssh.service.Impl.DepartmentServiceImpl">
+        <property name="departmentDao" ref="departmentDao"/>
+    </bean>
 
     <!--dao层配置-->
     <!--<bean id="productDao" class="ssh.dao.ProductDao">-->
         <!--<property name="sessionFactory" ref="sessionFactory"/>-->
     <!--</bean>-->
     <bean id="employeeDao" class="ssh.dao.Impl.EmployeeDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="departmentDao" class="ssh.dao.Impl.DepartmentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
@@ -43,6 +49,10 @@
     <!--</bean>-->
     <bean id="employeeAction" class="ssh.action.EmployeeAction" scope="prototype">
         <property name="employeeService" ref="employeeService"/>
+    </bean>
+
+    <bean id="departmentAction" class="ssh.action.DepartmentAction" scope="prototype">
+        <property name="departmentService" ref="departmentService"/>
     </bean>
 
     <!--引入属性文件-->
@@ -65,7 +75,7 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
         <!--加载映射文件-->
