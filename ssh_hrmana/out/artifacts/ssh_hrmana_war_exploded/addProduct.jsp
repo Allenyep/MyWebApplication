@@ -12,22 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>保存商品</h1>
-<s:form  method="POST" >
-    <table border="1">
-        <tr>
-            <td>商品名称
-            <s:textfield name="pname" /></td>
-        </tr>
-        <tr>
-            <td>商品价格
-            <s:textfield name="price"/></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="添加"/></td>
-        </tr>
-    </table>
-</s:form>
 <h1>欢迎你：<s:property value="#session.existEmployee.ename"/> </h1>
+<a href="${pageContext.request.contextPath}/department_findAll.action">商品管理</a>
 </body>
 </html>
