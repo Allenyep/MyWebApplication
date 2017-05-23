@@ -1,0 +1,70 @@
+<view class="page-section">
+  <view class=" page-section-spacing swiper">
+    <swiper indicator-dots="{{indicatorDots}}" 
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" >
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="600" height="250"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+
+<view class="page-section">
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1">
+            <image src="/img/ablum.jpg" class="image-plus"></image>
+          </view>
+          <view class="flex-item demo-text-2">
+            <image src="/img/ablum.jpg" class="image-plus"></image>
+          </view>
+          <view class="flex-item demo-text-3">
+            <image src="/img/ablum.jpg" class="image-plus"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="page-section">
+  <view class="page-section-title">
+        <text>推荐歌单</text>
+  </view>
+  <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1">
+            <image src="/img/ablum2.jpg" class="image-plus"></image>
+          </view>
+          <view class="flex-item demo-text-2">
+            <image src="/img/ablum2.jpg" class="image-plus"></image>
+          </view>
+          <view class="flex-item demo-text-3">
+            <image src="/img/ablum2.jpg" class="image-plus"></image>
+          </view>
+        </view>
+      </view>
+</view>
+
+<view class="kind-list">
+<block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <!--<image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>-->
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="#" class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+</view>
+

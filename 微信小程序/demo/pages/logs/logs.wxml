@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<image src="{{poster}}" style="width:300px;height:300px;"></image>
+<audio name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item "><button type="primary" class="flex-item" bindtap="audioPlay">播放</button></view>
+    <view class="flex-item "><button type="primary" class="flex-item" bindtap="audioPause">暂停</button></view>
+    <view class="flex-item "><button type="primary" class="flex-item" bindtap="audioStart">回到开头</button></view>
+  </view>
