@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.allen.vipmana.dao.UserDao">
+    <select id="select" resultType="com.allen.vipmana.entity.User" >
+        SELECT * FROM sys_user WHERE ${key}=#{value}
+    </select>
+    <!--<insert id="insert"></insert>-->
+    <update id="update">
+      UPDATE sys_user
+        SET account=?,
+            name=?,
+            password=?
+       WHERE ${key}=#{value}
+    </update>
+
+</mapper>
