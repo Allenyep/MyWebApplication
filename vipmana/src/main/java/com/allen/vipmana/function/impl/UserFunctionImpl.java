@@ -34,4 +34,23 @@ public class UserFunctionImpl implements UserFunction {
 
         return user;
     }
+
+    @Override
+    public User updatePassword(String id,String oldPassword, String newPassword,
+                               String newPasswordConfirm)throws Exception {
+        //1验证参数
+        id=$("id未填写",id);
+        oldPassword=$("原密码未填写",oldPassword);
+        newPassword=$("新密码未填写",newPassword);
+        newPasswordConfirm=$("确认密码填写",newPasswordConfirm);
+        //2查询用户
+        User user=userDao.select("id",id);
+        if(user==null){
+
+        }
+        //3验证旧密码
+        //4更新密码
+
+        return null;
+    }
 }

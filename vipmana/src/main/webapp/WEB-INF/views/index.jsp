@@ -11,6 +11,13 @@
     <meta charset="utf-8">
     <title>主页</title>
     <style>
+        menu,h1,ul{
+            margin: 0;
+        }
+        html,body{
+            margin:0;
+            height:100%;
+        }
         body>header{
             line-height: 80px;
             text-align: center;
@@ -26,11 +33,13 @@
             bottom: 0;
             width:100%;
         }
-        .body menu{
-            float: left;
+        .body>menu{
+            position: absolute;
+            left:0;
             width:200px;
             height:100%;
             border:1px solid black;
+            box-sizing: border-box;
         }
         .body>main{
             padding-left:200px;
@@ -41,6 +50,9 @@
             width:100%;
             border: 0;
             display: block;
+        }
+        section{
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -74,12 +86,12 @@
                     <a href="#">VIP客户消费管理</a>
                 </li>
                 <li>
-                    <a href="#">修改密码</a>
+                    <a href="updatepassword.do" target="mainFrame">修改密码</a>
                 </li>
             </ul>
         </menu>
         <main>
-            <iframe src="${pageContext.request.contextPath}/welcome.do"></iframe>
+            <iframe name="mainFrame" src="${pageContext.request.contextPath}/welcome.do"></iframe>
         </main>
     </section>
 
