@@ -16,6 +16,12 @@
         })();
     </script>
 
+    <script>
+        if(window.top!=window){
+            window.top.location.href=window.location.href;
+        }
+    </script>
+
     <title>登 录-Allen</title>
 
     <!-- Font Awesome -->
@@ -78,6 +84,7 @@
                     <div class="options">
                         <p>没有账号? <a href="javascript:;" class="btn-register">注册</a></p>
                         <p>忘记 <a href="javascript:;" class="btn-forgetpwd">密码?</a></p>
+                        <p>返回 <a href="javascript:;" onclick="location='${pageContext.request.contextPath}/index.jsp'" class="btn-forgetpwd">首页</a></p>
                     </div>
                 </div>
 

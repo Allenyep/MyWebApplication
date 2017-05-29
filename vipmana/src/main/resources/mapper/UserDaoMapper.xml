@@ -9,10 +9,10 @@
     <!--<insert id="insert"></insert>-->
     <update id="update">
       UPDATE sys_user
-        SET account=?,
-            name=?,
-            password=?
-       WHERE ${key}=#{value}
+        SET account=#{account},
+            name=#{name},
+            password=#{password}
+       WHERE id=#{id}
     </update>
 
 </mapper>

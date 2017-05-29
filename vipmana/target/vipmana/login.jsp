@@ -16,6 +16,12 @@
         })();
     </script>
 
+    <script>
+        if(window.top!=window){
+            window.top.location.href=window.location.href;
+        }
+    </script>
+
     <title>登 录-Allen</title>
 
     <!-- Font Awesome -->
@@ -78,12 +84,14 @@
                     <div class="options">
                         <p>没有账号? <a href="javascript:;" class="btn-register">注册</a></p>
                         <p>忘记 <a href="javascript:;" class="btn-forgetpwd">密码?</a></p>
+                        <p>返回 <a href="javascript:;" onclick="location='${pageContext.request.contextPath}/index.jsp'" class="btn-forgetpwd">首页</a></p>
                     </div>
                 </div>
 
             </div>
             <!--/Form with header-->
         </div>
+        <%--注册--%>
         <div class="register-box" style="display: none;">
             <!--Form with header-->
             <div class="card">
@@ -118,6 +126,14 @@
                         <label for="registerpasswordcomfirm">确认密码</label>
                     </div>
 
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input type="password" id="registervalidate" class="form-control">
+                        <label for="registervalidate"><img name="imgvalidate" url="${pageContext.request.contextPath}/imgvali.do"/></label>
+                    </div>
+                    <%
+                        //TODO 加一个注册验证码！！！
+                    %>
                     <div class="text-center">
                         <button class="btn btn-indigo">注 册</button>
                         <hr>

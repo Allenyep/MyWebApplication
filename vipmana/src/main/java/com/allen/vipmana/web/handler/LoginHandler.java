@@ -60,7 +60,8 @@ public class LoginHandler {
     }
 
     @RequestMapping(method = RequestMethod.POST,path = "/updatepassword.do")
-    private String updatepassword(String oldPassword, String newPassword, String newPasswordConfirm,HttpServletRequest request)throws Exception{
+    private String updatepassword(String oldPassword, String newPassword, String newPasswordConfirm,
+                                  HttpServletRequest request)throws Exception{
         HttpSession session=request.getSession();
         User user= (User) session.getAttribute("currentUser");
         try {
