@@ -68,10 +68,10 @@
         <menu>
             <ul>
                 <li>
-                    <a href="#">VIP客户查询</a>
+                    <a href="${pageContext.request.contextPath}/vip/qry.do" target="mainFrame">VIP客户查询</a>
                 </li>
                 <li>
-                    <a href="#">录入VIP客户</a>
+                    <a href="vip/add.do" target="mainFrame">录入VIP客户</a>
                 </li>
                 <li>
                     <a href="#">VIP客户管理</a>

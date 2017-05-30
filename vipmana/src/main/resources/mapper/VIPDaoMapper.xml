@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.allen.vipmana.dao.VIPDao">
+    <select id="select" resultMap="VIPMap">
+        SELECT * FROM vip_detail WHERE ${key}=#{value}
+    </select>
+    <select id="selectLike"  resultMap="VIPMap">
+        SELECT * FROM vip_detail
+        <if test="key!=null">
+            WHERE vcode LIKE #{key}
+            OR name LIKE #{key}
+            OR qq LIKE #{key}
+            OR email LIKE #{key}
+            OR address LIKE #{key}
+            OR remark LIKE #{key}
+        </if>
+        ORDER BY vcode
+    </select>
+    <insert id="insert">
+        INSERT INTO vip_detail(id,vcode,name,age,sex,qq,email,address,zip,remark,rank,amount)
+        VALUES (#{id},#{vcode},#{name},#{age},#{sex},#{qq},#{email},#{address},#{zip},#{remark},#{rank},#{amount})
+    </insert>
+    <update id="update">
+        UPDATE vip_detail SET
+        vcode=#{vcode},
+        name=#{name},
+        age=#{age},
+        sex=#{sex},
+        qq=#{qq},
+        email=#{email},
+        address=#{address},
+        zip=#{zip},
+        remark=#{remark},
+        rank=#{rank},
+        amount=#{amount}
+        WHERE id=#{id}
+
+    </update>
+    <resultMap type="com.allen.vipmana.entity.VIP" id="VIPMap">
+        <id column="id" property="id"/>
+        <result column="vcode" property="vcode"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="sex" property="male"/>
+        <result column="qq" property="qq"/>
+        <result column="email" property="email"/>
+        <result column="address" property="address"/>
+        <result column="zip" property="zip"/>
+        <result column="remark" property="remark"/>
+        <result column="rank" property="rank"/>
+        <result column="amount" property="amount"/>
+    </resultMap>
+
+</mapper>
