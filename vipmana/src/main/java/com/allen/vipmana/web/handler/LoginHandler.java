@@ -32,7 +32,7 @@ public class LoginHandler {
             e.printStackTrace();
             return "forward:/login.jsp";
         }
-        return "redirect:/index.do";
+        return "redirect:/userindex.do";
 
     }
 
@@ -53,9 +53,13 @@ public class LoginHandler {
         return "redirect:/login.jsp";
     }
 
+    @RequestMapping(method = RequestMethod.GET,path = "/userindex.do")
+    private String userindex(){
+        return "userindex";
+    }
+
     @RequestMapping(method = RequestMethod.GET,path = "/updatepassword.do")
     private String updatepasswordView(){
-
         return "updatepassword";
     }
 
@@ -72,5 +76,19 @@ public class LoginHandler {
         }
         session.setAttribute("message","修改密码成功");
         return "redirect:/login.jsp";
+    }
+
+    @RequestMapping(method = RequestMethod.POST,path = "/register.do")
+    private String register(HttpServletRequest req,String name,String account,String password,String passwordConfirm)throws Exception{
+        try{
+            userFunction.insert(name, account, password, passwordConfirm);
+
+        }catch (ThisSystemException e) {
+            req.setAttribute("message",e.getMessage());
+            e.printStackTrace();
+            return "forward:/login.jsp";
+        }
+        req.setAttribute("message","注册成功");
+        return "forward:/login.jsp";
     }
 }

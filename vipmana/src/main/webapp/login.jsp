@@ -93,6 +93,7 @@
         </div>
         <%--注册--%>
         <div class="register-box" style="display: none;">
+
             <!--Form with header-->
             <div class="card">
                 <div class="card-block">
@@ -100,29 +101,31 @@
                     <!--Header-->
                     <div class="form-header blue-gradient">
                         <h3><i class="fa fa-user"></i> 注 册:</h3>
+                        <h5>${message}</h5>
                         <a href="#" class="close">X</a>
                     </div>
                     <!--Body-->
+                    <form action="${pageContext.request.contextPath}/register.do" method="post">
                     <div class="md-form">
                         <i class="fa fa-user prefix"></i>
-                        <input type="text" id="registername" class="form-control">
+                        <input type="text" id="registername" name="name"  class="form-control">
                         <label for="registername">你的昵称</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
-                        <input type="text" id="registermail" class="form-control">
+                        <input type="email" id="registermail" name="account"  class="form-control">
                         <label for="registermail">你的邮箱</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="registerpassword" class="form-control">
+                        <input type="password" id="registerpassword" name="password" class="form-control">
                         <label for="registerpassword">你的密码</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <input type="password" id="registerpasswordcomfirm" class="form-control">
+                        <input type="password" id="registerpasswordcomfirm" name="passwordConfirm"  class="form-control">
                         <label for="registerpasswordcomfirm">确认密码</label>
                     </div>
 
@@ -135,14 +138,14 @@
                         //TODO 加一个注册验证码！！！
                     %>
                     <div class="text-center">
-                        <button class="btn btn-indigo">注 册</button>
+                        <button class="btn btn-indigo" type="submit">注 册</button>
                         <hr>
                         <fieldset class="form-group">
                             <input type="checkbox" id="checkbox1">
                             <label for="checkbox1">Subscribe me to the newsletter</label>
                         </fieldset>
                     </div>
-
+            </form>
                 </div>
             </div>
             <!--/Form with header-->

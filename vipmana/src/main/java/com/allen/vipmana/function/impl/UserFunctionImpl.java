@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserFunctionImpl implements UserFunction {
+
     @Autowired
     private UserDao userDao;
     @Override
@@ -56,5 +57,32 @@ public class UserFunctionImpl implements UserFunction {
         user.setPassword(ThisSystemUtil.getMd5(newPassword));
         userDao.update(user);
         return user;
+    }
+
+    @Override
+    public User insert(String name, String account, String password, String passwordConfirm) throws Exception {
+        //1参数验证
+        name=$("名称未填写",name);
+        account=$("账号未填写",account);
+        password=$("密码未填写",password);
+        passwordConfirm=$("确认密码未填写",passwordConfirm);
+
+        //2业务验证
+        assertEquals("两次密码不一致",password,passwordConfirm);
+
+        //TODO:账户名重复重复验证
+        if(userDao.select("account",account)!=null)
+            throw new ThisSystemException("账户名存在");
+        User u=new User();
+        name=new String(name.getBytes("ISO-8859-1"),"UTF-8");
+        u.setName(name);
+        u.setAccount(account);
+        password=ThisSystemUtil.getMd5(password);
+        u.setPassword(password);
+        System.out.println(name+account+password);
+
+        //3插入数据
+        userDao.insert(u);
+        return u;
     }
 }

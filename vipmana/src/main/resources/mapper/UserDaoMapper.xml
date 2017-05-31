@@ -6,7 +6,9 @@
     <select id="select" resultType="com.allen.vipmana.entity.User" >
         SELECT * FROM sys_user WHERE ${key}=#{value}
     </select>
-    <!--<insert id="insert"></insert>-->
+    <insert id="insert" parameterType="com.allen.vipmana.entity.User">
+        INSERT INTO sys_user(account,name,password)VALUES (#{account},#{name},#{password})
+    </insert>
     <update id="update">
       UPDATE sys_user
         SET account=#{account},
