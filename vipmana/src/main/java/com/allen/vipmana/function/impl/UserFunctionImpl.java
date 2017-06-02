@@ -70,7 +70,6 @@ public class UserFunctionImpl implements UserFunction {
         //2业务验证
         assertEquals("两次密码不一致",password,passwordConfirm);
 
-        //TODO:账户名重复重复验证
         if(userDao.select("account",account)!=null)
             throw new ThisSystemException("账户名存在");
         User u=new User();

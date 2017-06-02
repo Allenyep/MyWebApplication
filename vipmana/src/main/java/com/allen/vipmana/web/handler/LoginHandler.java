@@ -82,7 +82,6 @@ public class LoginHandler {
     private String register(HttpServletRequest req,String name,String account,String password,String passwordConfirm)throws Exception{
         try{
             userFunction.insert(name, account, password, passwordConfirm);
-
         }catch (ThisSystemException e) {
             req.setAttribute("message",e.getMessage());
             e.printStackTrace();

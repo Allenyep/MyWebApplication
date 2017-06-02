@@ -150,6 +150,7 @@
                         <a class="nav-link" href="#container"><i class="fa fa-list-alt" aria-hidden="true"></i>快速链接</a>
                     </li>
                     <li class="nav-item">
+                        <% //TODO:增加一个dropdown 参考个人主页%>
                         <a class="nav-link btn-login" href="javascript:;" onclick="location='${pageContext.request.contextPath}/useraccount.do'"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
                     </li>
                     <li class="nav-item">
