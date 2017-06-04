@@ -143,21 +143,27 @@
                     <a class="nav-link" href="https://github.com/Allenyep/SearchPage"><i class="fa fa-github" aria-hidden="true"></i>github</a>
                 </li>
             </ul>
-            <form class="form-inline waves-effect waves-light">
+            <div class="d-inline">
                 <!-- <input class="form-control" type="text" placeholder="Search"> -->
                 <ul class="navbar-nav mr-auto" style="float: right;">
                     <li class="nav-item">
                         <a class="nav-link" href="#container"><i class="fa fa-list-alt" aria-hidden="true"></i>快速链接</a>
                     </li>
-                    <li class="nav-item">
-                        <% //TODO:增加一个dropdown 参考个人主页%>
+                    <%--<li class="nav-item">
                         <a class="nav-link btn-login" href="javascript:;" onclick="location='${pageContext.request.contextPath}/useraccount.do'"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn-login" href="javascript:;" onclick="if(confirm('是否退出')==true)location='${pageContext.request.contextPath}/logout.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>退出</a>
+                    </li>--%>
+                    <li class="nav-item dropdown btn-group">
+                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
+                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" onclick="location='${pageContext.request.contextPath}/vip/usermain.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>个人中心</a>
+                            <a class="dropdown-item" href="javascript:;" onclick="if(confirm('是否退出')==true)location='${pageContext.request.contextPath}/logout.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>退出</a>
+                        </div>
                     </li>
                 </ul>
-            </form>
+            </div>
         </div>
     </div>
 </nav>

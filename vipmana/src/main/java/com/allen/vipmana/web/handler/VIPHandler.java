@@ -34,4 +34,9 @@ public class VIPHandler {
         }
         return "vip/qry";
     }
+
+    @RequestMapping(path = "/vip/usermain.do")
+    public String usermain(){
+        return "vip/usermain";
+    }
 }

@@ -15,5 +15,5 @@
     </bean>
 
     <!--扫描所有控制器-->
-    <context:component-scan base-package="com.allen.vipmana.web.handler"></context:component-scan>
+    <context:component-scan base-package="com.allen.vipmana.web.handler"/>
 </beans>
