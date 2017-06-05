@@ -1,6 +1,7 @@
 package com.allen.vipmana.web.handler;
 
 import com.allen.common.ThisSystemException;
+import com.allen.vipmana.entity.User;
 import com.allen.vipmana.entity.VIP;
 import com.allen.vipmana.function.VIPFunction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -35,8 +37,4 @@ public class VIPHandler {
         return "vip/qry";
     }
 
-    @RequestMapping(path = "/vip/usermain.do")
-    public String usermain(){
-        return "vip/usermain";
-    }
 }

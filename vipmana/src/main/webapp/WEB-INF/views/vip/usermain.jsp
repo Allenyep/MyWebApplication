@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,34 +114,35 @@
                     <% //TODO:读取数据Label标签%>
                     <div class="widget-wrapper">
                         <h4>标签:</h4>
+                        <strong>${mess}</strong>
                         <br>
                         <div class="list-group">
-                            <a href="#" class="list-group-item active">Woman</a>
-                            <a href="#" class="list-group-item">Man</a>
-                            <a href="#" class="list-group-item">Shoes</a>
-                            <a href="#" class="list-group-item">T-shirt</a>
-                            <a href="#" class="list-group-item">Jewellery</a>
+                            <c:forEach var="label" items="${labels}">
+                                <c:if test="${label!=null}">
+                                <a href="#" class="list-group-item"><c:out value="${label.labelName}"/></a>
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
 
                     <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h4>Subscription form:</h4>
+                        <h4>添加一个标签:</h4>
                         <br>
                         <div class="card">
                             <div class="card-block">
-                                <p><strong>Subscribe to our newsletter</strong></p>
-                                <p>Once a week we will send you a summary of the most useful news</p>
+                                <p><strong>再添加一个标签栏目</strong></p>
+                                <p>添加你所需要的标签和它可能的颜色</p>
                                 <div class="md-form">
                                     <i class="fa fa-user prefix"></i>
                                     <input type="text" id="form1" class="form-control">
-                                    <label for="form1">Your name</label>
+                                    <label for="form1">标签名称</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix"></i>
                                     <input type="text" id="form2" class="form-control">
-                                    <label for="form2">Your email</label>
+                                    <label for="form2">标签颜色</label>
                                 </div>
-                                <button class="btn btn-default">Submit</button>
+                                <button class="btn btn-default">添 加</button>
 
                             </div>
                         </div>
@@ -156,61 +158,23 @@
                     <div class="row wow fadeIn" data-wow-delay="0.4s">
                         <div class="col-lg-12">
                             <div class="divider-new">
-                                <h2 class="h2-responsive">What's new?</h2>
+                                <h2 class="h2-responsive">调整你的标签属性</h2>
                             </div>
                             
                             
                             
                             <!--Carousel Wrapper-->
                             <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-                                <!--Indicators-->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                                </ol>
-                                <!--/.Indicators-->
                                 <!--Slides-->
                                 <div class="carousel-inner" role="listbox">
                                     <!--First slide-->
                                     <div class="carousel-item active">
-                                        <img src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" alt="First slide">
-                                        <div class="carousel-caption">
-                                            <h4>New collection</h4>
-                                            <br>
-                                        </div>
+                                        <iframe style="width: 100%;height: 400px;" src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" ></iframe>
                                     </div>
                                     <!--/First slide-->
-                                    <!--Second slide-->
-                                    <div class="carousel-item">
-                                        <img src="http://mdbootstrap.com/img//Photos/Slides/img%20(109).jpg" alt="Second slide">
-                                        <div class="carousel-caption">
-                                            <h4>Get discount!</h4>
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <!--/Second slide-->
-                                    <!--Third slide-->
-                                    <div class="carousel-item">
-                                        <img src="http://mdbootstrap.com/img//Photos/Slides/img%20(36).jpg" alt="Third slide">
-                                        <div class="carousel-caption">
-                                            <h4>Only now for 10$</h4>
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <!--/Third slide-->
                                 </div>
                                 <!--/.Slides-->
-                                <!--Controls-->
-                                <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                                <!--/.Controls-->
+
                             </div>
                             <!--/.Carousel Wrapper-->
                         </div>
@@ -382,18 +346,6 @@
         <!--/.Footer Links-->
 
         <hr>
-
-        <!--Call to action-->
-        <div class="call-to-action">
-            <h4>Material Design for Bootstrap</h4>
-            <ul>
-                <li>
-                    <h5>Get our UI KIT for free</h5></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-info" rel="nofollow">Sign up!</a></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-primary" rel="nofollow">Learn more</a></li>
-            </ul>
-        </div>
-        <!--/.Call to action-->
 
         <!--Copyright-->
         <div class="footer-copyright">

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.allen.vipmana.dao.LabelDao">
+    <select id="select" resultType="com.allen.vipmana.entity.Label" resultMap="LabelRM">
+        SELECT * FROM lable WHERE ${key}=#{value}
+    </select>
+    <select id="selectById" resultType="com.allen.vipmana.entity.Label" resultMap="LabelRM">
+        SELECT * FROM lable WHERE ${key}=#{value}
+    </select>
+    <insert id="insert" parameterType="com.allen.vipmana.entity.Label">
+        INSERT INTO lable(userId,labelColorId,labelName)VALUES (#{userId},#{labelColorId},#{labelName})
+    </insert>
+    <update id="update">
+        UPDATE lable
+        SET userId=#{userId},
+        labelColorId=#{labelColorId},
+        labelName=#{labelName}
+        WHERE userId=#{userId}
+        AND labelId=#{labelId}
+    </update>
+    
+    <resultMap id="LabelRM" type="com.allen.vipmana.entity.Label">
+        <id property="labelId" column="labelId"/>
+        <result property="userId" column="userId"/>
+        <result property="labelColorId" column="labelColorId"/>
+        <result property="labelName" column="labelName"/>
+    </resultMap>
+</mapper>

@@ -149,12 +149,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#container"><i class="fa fa-list-alt" aria-hidden="true"></i>快速链接</a>
                     </li>
-                    <%--<li class="nav-item">
-                        <a class="nav-link btn-login" href="javascript:;" onclick="location='${pageContext.request.contextPath}/useraccount.do'"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn-login" href="javascript:;" onclick="if(confirm('是否退出')==true)location='${pageContext.request.contextPath}/logout.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>退出</a>
-                    </li>--%>
                     <li class="nav-item dropdown btn-group">
                         <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
                         <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
