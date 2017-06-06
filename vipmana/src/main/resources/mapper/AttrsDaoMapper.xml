@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.allen.vipmana.dao.AttrsDao">
+    <select id="select" resultType="com.allen.vipmana.entity.Attrs" resultMap="AttrsRM">
+        SELECT * FROM attrs WHERE ${key}=#{value}
+    </select>
+    <select id="selectById" resultType="com.allen.vipmana.entity.Attrs" resultMap="AttrsRM">
+        SELECT * FROM attrs WHERE ${key}=#{value}
+    </select>
+    <insert id="insert" parameterType="com.allen.vipmana.entity.Attrs">
+        INSERT INTO attrs(labelId,attrName,attrURL)VALUES (#{labelId},#{attrName},#{attrURL})
+    </insert>
+    <update id="update">
+        UPDATE attrs
+        SET attrName=#{attrName},
+            attrURL=#{attrURL}
+        WHERE labelId=#{labelId}
+        AND attrId=#{attrId}
+    </update>
+
+    <resultMap id="AttrsRM" type="com.allen.vipmana.entity.Attrs">
+        <id property="attrId" column="attrId"/>
+        <result property="labelId" column="labelId"/>
+        <result property="attrName" column="attrName"/>
+        <result property="attrURL" column="attrURL"/>
+    </resultMap>
+</mapper>

@@ -30,4 +30,15 @@ public class LabelFunctionImpl implements LabelFunction {
         }
         return list;
     }
+
+    @Override
+    public void insert(Label label) throws Exception {
+        labelDao.insert(label);
+    }
+
+    @Override
+    public void delete(int labelId) throws Exception {
+        System.out.println("==============labelId:"+labelId);
+        labelDao.delete(labelId);
+    }
 }

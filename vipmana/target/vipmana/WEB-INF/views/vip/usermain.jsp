@@ -111,39 +111,40 @@
                 <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
 
 
-                    <% //TODO:读取数据Label标签%>
                     <div class="widget-wrapper">
-                        <h4>标签:</h4>
-                        <strong>${mess}</strong>
+                        <h4>栏目:</h4>
+                        <strong>${message}</strong>
                         <br>
-                        <div class="list-group">
+                        <div class="list-group menu">
                             <c:forEach var="label" items="${labels}">
                                 <c:if test="${label!=null}">
-                                <a href="#" class="list-group-item"><c:out value="${label.labelName}"/></a>
+                                <a href="${pageContext.request.contextPath}/usermainattrs.do?labelId=${label.labelId}" target="attrFrame"
+                                   class="list-group-item"><c:out value="${label.labelName}"/></a>
                                 </c:if>
                             </c:forEach>
                         </div>
                     </div>
 
                     <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <h4>添加一个标签:</h4>
+                        <h4>添加一个栏目:</h4>
                         <br>
                         <div class="card">
                             <div class="card-block">
-                                <p><strong>再添加一个标签栏目</strong></p>
-                                <p>添加你所需要的标签和它可能的颜色</p>
-                                <div class="md-form">
-                                    <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="form1" class="form-control">
-                                    <label for="form1">标签名称</label>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-envelope prefix"></i>
-                                    <input type="text" id="form2" class="form-control">
-                                    <label for="form2">标签颜色</label>
-                                </div>
-                                <button class="btn btn-default">添 加</button>
-
+                                <p><strong>添加栏目</strong></p>
+                                <p>添加你所需要的标签</p>
+                                <form action="${pageContext.request.contextPath}/userLabelInsert.do" method="post">
+                                    <div class="md-form">
+                                        <i class="fa fa-user prefix"></i>
+                                        <input type="text" id="form1" name="labelName" class="form-control">
+                                        <label for="form1">栏目名称</label>
+                                    </div>
+                                    <%--<div class="md-form">
+                                        <i class="fa fa-envelope prefix"></i>
+                                        <input type="text" id="form2" name="labelColor" class="form-control">
+                                        <label for="form2">栏目颜色</label>
+                                    </div>--%>
+                                    <button type="submit" class="btn btn-default">添 加</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -158,7 +159,7 @@
                     <div class="row wow fadeIn" data-wow-delay="0.4s">
                         <div class="col-lg-12">
                             <div class="divider-new">
-                                <h2 class="h2-responsive">调整你的页面</h2>
+                                <h2 class="h2-responsive">调整你的栏目标签</h2>
                             </div>
                             
                             
@@ -169,7 +170,9 @@
                                 <div class="carousel-inner" role="listbox">
                                     <!--First slide-->
                                     <div class="carousel-item active">
-                                        <iframe style="width: 100%;height: 400px;" src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" ></iframe>
+                                        <iframe id="attrFrame" frameborder="no" name="attrFrame" style="width: 100%;height: 550px;"
+                                                src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" ></iframe>
+                                        <%--${pageContext.request.contextPath}/usermainattrs.do--%>
                                     </div>
                                     <!--/First slide-->
                                 </div>
@@ -221,7 +224,7 @@
 
                                 <!--Card image-->
                                 <div class="view overlay hm-white-slight">
-                                    <img src="http://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(38).jpg" class="img-fluid" alt="">
+                                    <img src="http://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(38).jpg" class="img-fluid">
                                     <a href="#">
                                         <div class="mask"></div>
                                     </a>
@@ -376,6 +379,12 @@
     
     <script>
     new WOW().init();
+
+    $(function(){
+        $(".menu a").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    });
     </script>
 
 </body>

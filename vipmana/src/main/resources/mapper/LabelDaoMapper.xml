@@ -20,7 +20,9 @@
         WHERE userId=#{userId}
         AND labelId=#{labelId}
     </update>
-    
+    <delete id="delete" parameterType="int">
+        DELETE * FROM lable WHERE labelId=#{labelId}
+    </delete>
     <resultMap id="LabelRM" type="com.allen.vipmana.entity.Label">
         <id property="labelId" column="labelId"/>
         <result property="userId" column="userId"/>
