@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加标签</title>
+    <title>修改标签</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
@@ -23,20 +23,22 @@
 <body>
 <div class="card">
     <div class="card-block">
-        <p><strong>添加标签</strong></p>
-        <p>添加你所需要的标签</p>
-        <form action="${pageContext.request.contextPath}/userattradd.do" method="post">
+        <p><strong>修改标签</strong></p>
+        <p>修改你的标签</p>
+        <form action="${pageContext.request.contextPath}/userattrupdate.do" method="post">
             <div class="md-form">
                 <i class="fa fa-user prefix"></i>
-                <input type="text" id="form1" name="attrName" class="form-control">
+                <input type="text" id="form1" value="${attr.attrName}" name="attrName" class="form-control">
                 <label for="form1">标签名称</label>
             </div>
             <div class="md-form">
                 <i class="fa fa-envelope prefix"></i>
-                <input type="text" id="form2" name="attrURL" class="form-control">
+                <input type="text" id="form2" value="${attr.attrURL}" name="attrURL" class="form-control">
                 <label for="form2">标签地址</label>
             </div>
-            <button type="submit" class="btn btn-default">添 加</button>
+            <input type="hidden" value="${attr.attrId}" name="attrId">
+            <button type="submit" class="btn btn-default">修 改</button>
+            <button onclick="history.back(-1);" class="btn btn-info">返 回</button>
         </form>
     </div>
 </div>

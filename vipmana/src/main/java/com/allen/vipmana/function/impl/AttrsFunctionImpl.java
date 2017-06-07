@@ -22,4 +22,28 @@ public class AttrsFunctionImpl implements AttrsFunction {
         List<Attrs> list=attrsDao.selectById("labelId",labelId);
         return list;
     }
+
+    @Override
+    public void insert(String attrName, String attrURL, int labelId) throws Exception {
+        Attrs attr=new Attrs();
+        attrName=new String(attrName.getBytes("ISO-8859-1"),"UTF-8");
+        System.out.println(labelId);
+        attr.setAttrName(attrName);
+        attr.setAttrURL(attrURL);
+        attr.setLabelId(labelId);
+        attrsDao.insert(attr);
+
+    }
+
+    @Override
+    public void update(String attrName, String attrURL, int attrId) throws Exception {
+        Attrs attr=new Attrs();
+        attr.setAttrId(attrId);
+        attrName=new String(attrName.getBytes("ISO-8859-1"),"UTF-8");
+        attr.setAttrName(attrName);
+        attr.setAttrURL(attrURL);
+        attrsDao.update(attr);
+    }
+
+
 }

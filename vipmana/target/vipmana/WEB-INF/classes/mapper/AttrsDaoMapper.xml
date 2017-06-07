@@ -12,12 +12,11 @@
     <insert id="insert" parameterType="com.allen.vipmana.entity.Attrs">
         INSERT INTO attrs(labelId,attrName,attrURL)VALUES (#{labelId},#{attrName},#{attrURL})
     </insert>
-    <update id="update">
+    <update id="update" parameterType="com.allen.vipmana.entity.Attrs">
         UPDATE attrs
         SET attrName=#{attrName},
             attrURL=#{attrURL}
-        WHERE labelId=#{labelId}
-        AND attrId=#{attrId}
+        WHERE attrId=#{attrId}
     </update>
 
     <resultMap id="AttrsRM" type="com.allen.vipmana.entity.Attrs">

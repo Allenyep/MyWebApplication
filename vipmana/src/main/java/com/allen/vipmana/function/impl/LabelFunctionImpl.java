@@ -38,7 +38,7 @@ public class LabelFunctionImpl implements LabelFunction {
 
     @Override
     public void delete(int labelId) throws Exception {
-        System.out.println("==============labelId:"+labelId);
+//        System.out.println("==============labelId:"+labelId);
         labelDao.delete(labelId);
     }
 }

@@ -48,7 +48,7 @@ public class LabelHandler {
         label.setLabelColorId(new Random().nextInt(5)+1);
         labelFunction.insert(label);
         req.setAttribute("message","插入成功");
-        return "vip/usermain";
+        return "redirect:vip/usermain.do";
     }
 
     @RequestMapping(path = "/userLabelDelete.do")
@@ -56,5 +56,6 @@ public class LabelHandler {
         labelFunction.delete(Integer.parseInt(labelId));
         return "vip/usermainattrs";
     }
+
 
 }

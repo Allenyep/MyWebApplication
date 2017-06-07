@@ -29,7 +29,7 @@
             <input type="input" name="suserName" id="suserName"
                    placeholder="请输入关键字!" class="form-control input-sm input-size "/>
             <input type="submit" name="submit" value="查 询" class="btn btn-sm btn-warning "/>
-            <input type="button" value="新增标签" class="btn btn-primary btn-sm" onclick="deletedLabel()">
+            <input type="button" value="新增标签" class="btn btn-primary btn-sm" onclick="addAttr()">
         </form>
     </article>
     <form id="form2" name="form2" method="post" action="">
@@ -50,8 +50,8 @@
                         <td><input type="checkbox" name="ids" value=""></td>
                         <td>${attr.attrName}</td>
                         <td><a href="${attr.attrURL}" target="_blank">${attr.attrURL}</a></td>
-                        <td><a href="${pageContext.request.contextPath}!" class="list-group-item">
-                            修改</a></td>
+                        <td><a href="${pageContext.request.contextPath}/userattrupdate.do?attrName=${attr.attrName}&attrURL=${attr.attrURL}&attrId=${attr.attrId}"
+                               class="list-group-item">修改</a></td>
                         <td><a href="${pageContext.request.contextPath}!" class="list-group-item">
                             删除</a></td>
                     </c:if>
@@ -84,7 +84,13 @@
 <script>
 
     function addAttr() {
-
+        var iWidth=500; //弹出窗口的宽度;
+        var iHeight=400; //弹出窗口的高度;
+        var iTop = (window.screen.availHeight-30-iHeight)/2; //获得窗口的垂直位置;
+        var iLeft = (window.screen.availWidth-10-iWidth)/2; //获得窗口的水平位置;
+        window.open('${pageContext.request.contextPath}/userattradd.do?labelId=${labelId}','','scrollbars=yes,resizable=yes,height='+iHeight+
+            ', width='+iWidth+', top='+iTop+', left='+iLeft);
+        window.open(openUrl,"","height="+iHeight+", width="+iWidth+", top="+iTop+", left="+iLeft);
     }
 </script>
 </html>
