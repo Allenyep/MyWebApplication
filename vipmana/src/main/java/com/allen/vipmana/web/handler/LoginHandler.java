@@ -1,7 +1,11 @@
 package com.allen.vipmana.web.handler;
 
 import com.allen.common.ThisSystemException;
+import com.allen.vipmana.entity.Attrs;
+import com.allen.vipmana.entity.Label;
 import com.allen.vipmana.entity.User;
+import com.allen.vipmana.function.AttrsFunction;
+import com.allen.vipmana.function.LabelFunction;
 import com.allen.vipmana.function.UserFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by allen on 2017/5/10.
@@ -19,20 +24,32 @@ public class LoginHandler {
     @Autowired
     private UserFunction userFunction;
 
+    @Autowired
+    private LabelFunction labelFunction;
+
+    @Autowired
+    private AttrsFunction attrsFunction;
+
     @RequestMapping("/login.do")
     private String login(String account, String password, HttpServletRequest request){
         System.out.println("login -------");
+        HttpSession session=request.getSession();
         try {
             User user=userFunction.login(account,password);
-            System.out.println("user-0-----");
-            HttpSession session=request.getSession();
+            int userId=Integer.parseInt(user.getId());
+            List<Label> labellist=labelFunction.queryAllLabel(userId);
+            List<Attrs> attrsList=attrsFunction.queryAllAttr();
+//            System.out.println(labellist);     TYT
+//            System.out.println(attrsList);
+            session.setAttribute("labels",labellist);
             session.setAttribute("currentUser",user);
+            session.setAttribute("attrs",attrsList);
         }catch (Exception e){
             request.setAttribute("message",e.getMessage());
             e.printStackTrace();
             return "forward:/login.jsp";
         }
-        return "redirect:/userindex.do";
+        return "userindex";
 
     }
 

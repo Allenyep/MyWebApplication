@@ -9,6 +9,9 @@
     <select id="selectById" resultType="com.allen.vipmana.entity.Attrs" resultMap="AttrsRM">
         SELECT * FROM attrs WHERE ${key}=#{value}
     </select>
+    <select id="selectAll" resultType="com.allen.vipmana.entity.Attrs" resultMap="AttrsRM">
+        SELECT * FROM attrs
+    </select>
     <insert id="insert" parameterType="com.allen.vipmana.entity.Attrs">
         INSERT INTO attrs(labelId,attrName,attrURL)VALUES (#{labelId},#{attrName},#{attrURL})
     </insert>

@@ -45,5 +45,10 @@ public class AttrsFunctionImpl implements AttrsFunction {
         attrsDao.update(attr);
     }
 
+    @Override
+    public List<Attrs> queryAllAttr() throws Exception {
+        return attrsDao.selectAll();
+    }
+
 
 }

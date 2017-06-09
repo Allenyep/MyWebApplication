@@ -17,4 +17,6 @@ public interface AttrsFunction {
     //更新标签
     public void update(String attrName,String attrURL,int attrId)throws Exception;
 
+    //遍历所有标签
+    public List<Attrs> queryAllAttr()throws Exception;
 }

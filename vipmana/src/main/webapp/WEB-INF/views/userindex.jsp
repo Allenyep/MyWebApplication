@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: allen
@@ -13,12 +14,12 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="baidu-site-verification" content="9ipcwwSHSK" />
+    <meta name="baidu-site-verification" content="9ipcwwSHSK"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/img/myicon.ico">
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?dc8a71d5824cb3cce7b9efa7c9db1063";
             var s = document.getElementsByTagName("script")[0];
@@ -53,6 +54,7 @@
         body {
             height: 100%;
         }
+
         /* Navigation*/
 
         .navbar {
@@ -78,6 +80,7 @@
             -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
             transition: background .5s ease-in-out, padding .5s ease-in-out;
         }
+
         /* Carousel*/
 
         .carousel {
@@ -105,11 +108,9 @@
             color: #fff;
         }
 
-        .seabox{
+        .seabox {
             min-width: 180px;
         }
-
-
 
 
     </style>
@@ -122,7 +123,9 @@
 <!--Navbar-->
 <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
     <div class="container">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">
@@ -140,7 +143,8 @@
                     <a class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i>支持</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/Allenyep/SearchPage"><i class="fa fa-github" aria-hidden="true"></i>github</a>
+                    <a class="nav-link" href="https://github.com/Allenyep/SearchPage"><i class="fa fa-github"
+                                                                                         aria-hidden="true"></i>github</a>
                 </li>
             </ul>
             <div class="d-inline">
@@ -150,10 +154,17 @@
                         <a class="nav-link" href="#container"><i class="fa fa-list-alt" aria-hidden="true"></i>快速链接</a>
                     </li>
                     <li class="nav-item dropdown btn-group">
-                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plug" aria-hidden="true"></i>${sessionScope.currentUser.name}</a>
+                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"><i class="fa fa-plug"
+                                                                         aria-hidden="true"></i>${sessionScope.currentUser.name}
+                        </a>
                         <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-                            <a class="dropdown-item" onclick="location='${pageContext.request.contextPath}/vip/usermain.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>个人中心</a>
-                            <a class="dropdown-item" href="javascript:;" onclick="if(confirm('是否退出')==true)location='${pageContext.request.contextPath}/logout.do'"><i class="fa fa-pause-circle" aria-hidden="true"></i>退出</a>
+                            <a class="dropdown-item"
+                               onclick="location='${pageContext.request.contextPath}/vip/usermain.do'"><i
+                                    class="fa fa-pause-circle" aria-hidden="true"></i>个人中心</a>
+                            <a class="dropdown-item" href="javascript:;"
+                               onclick="if(confirm('是否退出')==true)location='${pageContext.request.contextPath}/logout.do'"><i
+                                    class="fa fa-pause-circle" aria-hidden="true"></i>退出</a>
                         </div>
                     </li>
                 </ul>
@@ -171,24 +182,27 @@
     <div class="carousel-inner" role="listbox">
 
         <!-- First slide -->
-        <div id="backgroundurl" class="carousel-item active view hm-black-light" style=" background-repeat: no-repeat; background-size: cover;">
+        <div id="backgroundurl" class="carousel-item active view hm-black-light"
+             style=" background-repeat: no-repeat; background-size: cover;">
 
             <!-- Caption -->
             <div class="full-bg-img flex-center ">
                 <ul class="animated fadeInUp col-md-12">
                     <li>
-                        <h1 class="h1-responsive " style="font-size: 3rem"><i class="fa fa-send" aria-hidden="true"></i> Yep导 航</h1></li>
+                        <h1 class="h1-responsive " style="font-size: 3rem"><i class="fa fa-send" aria-hidden="true"></i>
+                            Yep导 航</h1></li>
                     <li>
                         <p>Best places you should see, traditional dishes that you have to try</p>
                     </li>
                     <li>
                         <form action="http://www.baidu.com/baidu" target="_blank" id="SearchForm">
                             <div class="md-form input-group" style="width: 60%; margin: 0 auto; ">
-                                <div class="input-group" >
+                                <div class="input-group">
                                     <input name="tn" type="HIDDEN" value="baidu">
                                     <i class="fa fa-search fa-2x" style="margin-top: 10px;" aria-hidden="true"></i>
-                                    <input type="text" name="word" class="form-control seabox" placeholder="想看什么see一下" id="SearchContent" baiduSug="1" style="background: white;border-radius:6px;">
-                                    <select class="md-select" id="SearchSelect" >
+                                    <input type="text" name="word" class="form-control seabox" placeholder="想看什么see一下"
+                                           id="SearchContent" baiduSug="1" style="background: white;border-radius:6px;">
+                                    <select class="md-select" id="SearchSelect">
                                         <option value="baidu" selected class="rounded-circle">百度</option>
                                         <option value="zhihu" class="rounded-circle">知乎</option>
                                         <option value="wangpan" class="rounded-circle">百度网盘</option>
@@ -219,155 +233,27 @@
 <!--Content-->
 <div class="container">
     <div class="row">
-        <!--First columnn-->
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-
-                <!--Card image-->
-                <!--  <div class="view overlay hm-white-slight">
-                     <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(120).jpg" class="img-fluid" alt="">
-                     <a href="#">
-                         <div class="mask"></div>
-                     </a>
-                 </div> -->
-                <!--/.Card image-->
-
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-1x fa-shopping-cart" aria-hidden="true"></i> 购 物</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="https://www.taobao.com/"><strong>淘 宝</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="https://www.tmall.com/"><strong>天 猫</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="https://www.jd.com/"><strong>京 东</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="http://www.suning.com/"><strong>苏 宁</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="http://www.yohobuy.com/"><strong>YOHO</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="http://www.dangdang.com/"><strong>当 当</strong></a>
-                    <a class="btn btn-outline-info btn-sm btn-rounded waves-effect" target="_blank" href="https://www.amazon.cn/"><i class="fa fa-amazon" aria-hidden="true"></i> <strong>亚马逊</strong></a>
+        <c:forEach var="label" items="${labels}">
+            <c:if test="${label!=null}">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title text-center"><c:out value="${label.labelName}"/></h4>
+                            <c:forEach var="attr" items="${attrs}">
+                                <c:if test="${attr.labelId==label.labelId}">
+                                    <a class="btn btn-outline-primary btn-sm btn-rounded waves-effect" target="_blank"
+                                       href="${attr.attrURL}"><strong><c:out value="${attr.attrName}"/></strong></a>
+                                </c:if>
+                            </c:forEach>
+                        </div>
+                    </div>
                 </div>
-                <!--/.Card content-->
+            </c:if>
+        </c:forEach>
 
-            </div>
-            <!--/.Card-->
-        </div>
-        <!--First columnn-->
-
-        <!--Second columnn-->
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-book" aria-hidden="true"></i> 学 习</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://www.csdn.net/"><strong>CSDN</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="https://github.com/"><strong><i class="fa fa-github" aria-hidden="true"></i> github</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://stackoverflow.com/"><strong><i class="fa fa-stack-overflow" aria-hidden="true"></i> stack-overflow</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="https://segmentfault.com/"><strong>segmentfault</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="https://open.163.com/"><strong>网易公开课</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://www.imooc.com/"><strong>慕课网</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://www.runoob.com/"><strong>菜鸟教程</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://www.zhihu.com/"><strong>知乎</strong></a>
-                    <a class="btn btn-outline-default btn-sm btn-rounded waves-effect" target="_blank" href="http://xueshu.baidu.com/"><strong>百度学术</strong></a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-        </div>
-        <!--Second columnn-->
-
-        <!--Third columnn-->
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-wrench" aria-hidden="true"></i> 工 具</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="http://fanyi.baidu.com/translate"><strong>百度翻译</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="http://map.baidu.com/"><i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>百度地图</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="http://www.cnki.net/"><strong>知 网</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="https://mail.qq.com/"><strong><i class="fa fa-qq" aria-hidden="true"></i> QQ邮箱</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="http://www.easyicon.net/"><strong>ICON</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="https://www.qcloud.com/"><i class="fa fa-cloud" aria-hidden="true"></i> <strong>腾讯云</strong></a>
-                    <a class="btn btn-outline-warning btn-sm btn-rounded waves-effect" target="_blank" href="http://www.jq22.com/"> <strong>JQuery库</strong></a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-        </div>
-
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-play-circle-o" aria-hidden="true"></i> 娱 乐</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-danger  btn-sm btn-rounded waves-effect" target="_blank" href="http://www.bilibili.com/"><strong><i class="fa fa-tv" aria-hidden="true"></i> 哔哩哔哩</strong></a>
-                    <a class="btn btn-outline-danger  btn-sm btn-rounded waves-effect" target="_blank" href="https://www.douyu.com/directory/game/DOTA2"><strong>斗 鱼</strong></a>
-                    <a class="btn btn-outline-danger  btn-sm btn-rounded waves-effect" target="_blank" href="http://www.youku.com/"><strong>优 酷</strong></a>
-                    <a class="btn btn-outline-danger  btn-sm btn-rounded waves-effect" target="_blank" href="http://music.163.com/"><strong><i class="fa fa-music" aria-hidden="true"></i> 云音乐</strong></a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-        </div>
-
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-internet-explorer" aria-hidden="true"></i> 科学上网</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-primary    btn-sm btn-rounded waves-effect" target="_blank" href="https://www.getlantern.org/"><strong><i class="fa fa-lightbulb-o" aria-hidden="true"></i> 蓝灯</strong></a>
-                    <a class="btn btn-outline-primary    btn-sm btn-rounded waves-effect" target="_blank" href="http://m.youtube.com/"><i class="fa fa-youtube" aria-hidden="true"></i><strong> Yotube</strong></a>
-                    <a class="btn btn-outline-primary    btn-sm btn-rounded waves-effect" target="_blank" href="http://instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i><strong> instagram</strong></a>
-                    <a class="btn btn-outline-primary    btn-sm btn-rounded waves-effect" target="_blank" href="https://www.panc.cc/"><strong>胖次网盘</strong></a>
-                    <a class="btn btn-outline-primary    btn-sm btn-rounded waves-effect" target="_blank" href="http://www.pixiv.net/"><strong> pixiv</strong></a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-        </div>
-
-        <div class="col-lg-4">
-            <!--Card-->
-            <div class="card">
-
-                <!--Card content-->
-                <div class="card-block">
-                    <!--Title-->
-                    <h4 class="card-title text-center"><i class="fa fa-bank" aria-hidden="true"></i> 校园相关</h4>
-                    <!--Text-->
-                    <a class="btn btn-outline-secondary    btn-sm btn-rounded waves-effect" target="_blank" href="http://www.cqjtu.edu.cn/"><strong>重交主页</strong></a>
-                    <a class="btn btn-outline-secondary    btn-sm btn-rounded waves-effect" target="_blank" href="http://202.202.244.120/webrfidlib/TSDW/index.aspx"><strong>图书查询</strong></a>
-                    <a class="btn btn-outline-secondary    btn-sm btn-rounded waves-effect" target="_blank" href="http://vod.cqjtu.edu.cn/"><strong>天佑乐视</strong></a>
-                    <a class="btn btn-outline-secondary    btn-sm btn-rounded waves-effect" target="_blank" href="http://www.cqjtu.edu.cn/main/ztwz.html"><strong>快速链接</strong></a>
-                    <a class="btn btn-outline-secondary    btn-sm btn-rounded waves-effect" target="_blank" href="http://ty.cqjtu.edu.cn/"><strong>天佑论坛</strong></a>
-                </div>
-                <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-        </div>
     </div>
 </div>
 <!--/.Content-->
-
 
 
 <!--Footer-->
@@ -428,15 +314,6 @@
 
     <hr>
 
-    <!--Call to action-->
-    <!--         <div class="call-to-action">
-                <h4>Material Design for Bootstrap</h4>
-                <ul>
-                    <li><h5>Get our UI KIT for free</h5></li>
-                    <li>Designed by <a href="https://github.com/Allenyep">Allenyep</a></li>
-                </ul>
-            </div> -->
-    <!--/.Call to action-->
 
     <!--Copyright-->
     <div class="footer-copyright">
@@ -478,21 +355,21 @@
     // Material Select Initialization
     // $.material.init();
 
-    $(document).ready(function() {
-        var randomnum=Math.random()*16+1;
-        randomnum=Math.floor(randomnum);
+    $(document).ready(function () {
+        var randomnum = Math.random() * 16 + 1;
+        randomnum = Math.floor(randomnum);
         var avatar = $("#backgroundurl").css("backgroundImage");
         console.log(avatar);
         // url("file:///C:/Users/allen/Desktop/PanSearchTest/half-page-carousel/yepnavi/img/background/10.jpg")
-        var newurl="url(\"static/img/background/"+randomnum+".jpg\")";
+        var newurl = "url(\"static/img/background/" + randomnum + ".jpg\")";
         // alert(newurl);
-        $("#backgroundurl").css("background",newurl);
+        $("#backgroundurl").css("background", newurl);
 
         //调用背景特效脚本
         //配置
         var config = {
             vx: 4,
-            vy:  4,
+            vy: 4,
             height: 2,
             width: 2,
             count: 100,
@@ -507,42 +384,42 @@
     });
 
     $().dropdown({autoinit: "select"});
-    $('#SearchContent').bind('keypress',function(event){
-        if(event.keyCode == 13){
+    $('#SearchContent').bind('keypress', function (event) {
+        if (event.keyCode == 13) {
             SearchSee();
         }
     });
 
     function SearchSee() {
-        var seaForm=$('#SearchForm');
-        var searchSelect=$('#SearchSelect').val();
-        var seaContent=$('#SearchContent').val();
+        var seaForm = $('#SearchForm');
+        var searchSelect = $('#SearchSelect').val();
+        var seaContent = $('#SearchContent').val();
         var url;
         // alert(seaContent);
-        switch(searchSelect){
+        switch (searchSelect) {
             case 'baidu':
-                url="http://www.baidu.com/s?wd=";
+                url = "http://www.baidu.com/s?wd=";
                 // window.open("http://www.baidu.com/s?wd="+seaContent);
                 break;
             case 'zhihu':
-                url="https://www.zhihu.com/search?type=content&q=";
+                url = "https://www.zhihu.com/search?type=content&q=";
                 break;
             case 'icon':
-                url="http://www.easyicon.net/iconsearch/";
+                url = "http://www.easyicon.net/iconsearch/";
                 break;
             case 'github':
-                url="https://github.com/search?utf8=%E2%9C%93&q=";
+                url = "https://github.com/search?utf8=%E2%9C%93&q=";
                 break;
             case 'wangpan':
-                url="http://www.sobaidupan.com/search.asp?wd=";
+                url = "http://www.sobaidupan.com/search.asp?wd=";
                 break;
             case 'weibo':
-                url="http://s.weibo.com/weibo/";
+                url = "http://s.weibo.com/weibo/";
                 break;
             case 'google':
-                url="https://www.google.com.hk/webhp?hl=zh-CN&sa=X&ved=0ahUKEwiUjI7PxtXSAhUKwrwKHdbRCVIQPAgD#safe=strict&hl=zh-CN&*&q="
+                url = "https://www.google.com.hk/webhp?hl=zh-CN&sa=X&ved=0ahUKEwiUjI7PxtXSAhUKwrwKHdbRCVIQPAgD#safe=strict&hl=zh-CN&*&q="
         }
-        window.open(url+seaContent);
+        window.open(url + seaContent);
     }
 
 </script>
