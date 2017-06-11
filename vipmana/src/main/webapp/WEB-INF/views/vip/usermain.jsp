@@ -80,7 +80,7 @@
                             <a class="nav-link" onclick="location='${pageContext.request.contextPath}/userindex.do'">返回首页</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Pricing</a>
+                            <a class="nav-link">个人信息</a>
                         </li>
                         <li class="nav-item dropdown btn-group">
                             <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -172,7 +172,6 @@
                                     <div class="carousel-item active">
                                         <iframe id="attrFrame" frameborder="no" name="attrFrame" style="width: 100%;height: 550px;"
                                                 src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" ></iframe>
-                                        <%--${pageContext.request.contextPath}/usermainattrs.do--%>
                                     </div>
                                     <!--/First slide-->
                                 </div>
@@ -294,11 +293,11 @@
             <div class="row">
 
                 <!--First column-->
-                <div class="col-md-3 offset-lg-1 hidden-lg-down">
-                    <h5 class="title">ABOUT MATERIAL DESIGN</h5>
-                    <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
+                <div class="col-lg-3 offset-lg-1 hidden-lg-down">
+                    <h5 class="title">关于 MATERIAL DESIGN</h5>
+                    <p>Material Design (codenamed Quantum Paper) 是由谷歌开发的一种设计语言。 </p>
 
-                    <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
+                    <p>Material Design for Bootstrap (MDB) 是一套基于Bootstrap的强大的 Material Design UI 设计包</p>
                 </div>
                 <!--/.First column-->
 
@@ -306,13 +305,9 @@
 
                 <!--Second column-->
                 <div class="col-lg-2 col-md-4 offset-lg-1">
-                    <h5 class="title">First column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
+                    <h5 class="title">Yep导航</h5>
+                    <p>此页面由Allenyep制作</p>
+                    <p>参考自<a href="#!">北邮人导航</a></p>
                 </div>
                 <!--/.Second column-->
 
@@ -320,12 +315,10 @@
 
                 <!--Third column-->
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Second column</h5>
+                    <h5 class="title">友情链接</h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li><a href="http://tanjianff.cn/" target="_blank">Tanjianff.cn</a></li>
+                        <li><a href="http://angryfu.cn/" target="_blank">angryfu.cn</a></li>
                     </ul>
                 </div>
                 <!--/.Third column-->
@@ -334,12 +327,12 @@
 
                 <!--Fourth column-->
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Third column</h5>
+                    <h5 class="title">Follow me on</h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li><a href="#!">Facebook</a></li>
+                        <li><a href="#!">Instagram</a></li>
+                        <li><a href="#!">Twitter</a></li>
+                        <li><a href="#!">Pinterest</a></li>
                     </ul>
                 </div>
                 <!--/.Fourth column-->
@@ -350,10 +343,9 @@
 
         <hr>
 
-        <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
+                © 2017 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>Designed by Allenyep
 
             </div>
         </div>

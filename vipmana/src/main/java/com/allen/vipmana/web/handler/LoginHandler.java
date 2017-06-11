@@ -37,19 +37,14 @@ public class LoginHandler {
         try {
             User user=userFunction.login(account,password);
             int userId=Integer.parseInt(user.getId());
-            List<Label> labellist=labelFunction.queryAllLabel(userId);
-            List<Attrs> attrsList=attrsFunction.queryAllAttr();
-//            System.out.println(labellist);     TYT
-//            System.out.println(attrsList);
-            session.setAttribute("labels",labellist);
             session.setAttribute("currentUser",user);
-            session.setAttribute("attrs",attrsList);
+            session.setAttribute("userId",userId);
         }catch (Exception e){
             request.setAttribute("message",e.getMessage());
             e.printStackTrace();
             return "forward:/login.jsp";
         }
-        return "userindex";
+        return "redirect:/userindex.do";
 
     }
 
@@ -71,7 +66,19 @@ public class LoginHandler {
     }
 
     @RequestMapping(method = RequestMethod.GET,path = "/userindex.do")
-    private String userindex(){
+    private String userindex(HttpServletRequest request)throws Exception{
+        HttpSession session=request.getSession();
+        int userId= (int) session.getAttribute("userId");
+        try{
+            List<Label> labellist=labelFunction.queryAllLabel(userId);
+            List<Attrs> attrsList=attrsFunction.queryAllAttr();
+            session.setAttribute("labels",labellist);
+            session.setAttribute("attrs",attrsList);
+        }catch (ThisSystemException e){
+            request.setAttribute("message",e.getMessage());
+            e.printStackTrace();
+            return "forward:/login.jsp";
+        }
         return "userindex";
     }
 

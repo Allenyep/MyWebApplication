@@ -137,7 +137,7 @@
                     <a class="nav-link"><i class="fa fa-search" aria-hidden="true"></i>搜索 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="visitor.html"><i class="fa fa-user" aria-hidden="true"></i>访客</a>
+                    <a class="nav-link" href="visitor.jsp"><i class="fa fa-user" aria-hidden="true"></i>访客</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"><i class="fa fa-heart" aria-hidden="true"></i>支持</a>
