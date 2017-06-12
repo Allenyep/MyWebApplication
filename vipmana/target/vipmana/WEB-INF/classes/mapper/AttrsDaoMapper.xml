@@ -21,6 +21,9 @@
             attrURL=#{attrURL}
         WHERE attrId=#{attrId}
     </update>
+    <delete id="delete">
+        DELETE FROM attrs WHERE attrId=#{key}
+    </delete>
 
     <resultMap id="AttrsRM" type="com.allen.vipmana.entity.Attrs">
         <id property="attrId" column="attrId"/>

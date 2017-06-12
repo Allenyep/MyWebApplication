@@ -42,13 +42,13 @@
 <body>
     <h2>Login</h2>
 
-    <div style="width: 500px;height: 260px;margin: 0 auto;">
+    <div style="height: 260px;margin: 0 auto;">
         <!-- login-box -->
-        <div class="login-mask" style="display: none;width: 100%; height: 950px;background:#000;opacity: 0.5; position: fixed; z-index: 10;"></div>
-        <div class="login-box">
+        <div class="login-mask " style="display: none;width: 100%; height: 950px;background:#000;opacity: 0.5; position: fixed; z-index: 10;"></div>
+        <div class="login-box col-lg-4 container">
             <!--Form with header-->
             <div class="card">
-                <div class="card-block">
+                <div class="card-block ">
 
                     <!--Header-->
                     <div class="form-header  purple darken-4">
@@ -92,7 +92,7 @@
             <!--/Form with header-->
         </div>
         <%--注册--%>
-        <div class="register-box" style="display: none;">
+        <div class="register-box col-lg-4 container" style="display: none;">
 
             <!--Form with header-->
             <div class="card">

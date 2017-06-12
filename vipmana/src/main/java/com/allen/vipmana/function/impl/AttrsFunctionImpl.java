@@ -50,5 +50,9 @@ public class AttrsFunctionImpl implements AttrsFunction {
         return attrsDao.selectAll();
     }
 
+    @Override
+    public void deleteById(int attrId) throws Exception {
+        attrsDao.delete(attrId);
+    }
 
 }

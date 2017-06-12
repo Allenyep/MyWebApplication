@@ -80,6 +80,9 @@
                             <a class="nav-link" onclick="location='${pageContext.request.contextPath}/userindex.do'">返回首页</a>
                         </li>
                         <li class="nav-item">
+                            <%
+                                //TODO:个人信息页面
+                            %>
                             <a class="nav-link">个人信息</a>
                         </li>
                         <li class="nav-item dropdown btn-group">
@@ -171,7 +174,7 @@
                                     <!--First slide-->
                                     <div class="carousel-item active">
                                         <iframe id="attrFrame" frameborder="no" name="attrFrame" style="width: 100%;height: 550px;"
-                                                src="http://mdbootstrap.com/img//Photos/Slides/img%20(107).jpg" ></iframe>
+                                                src="http://oolhqclj2.bkt.clouddn.com/ablum.jpg" ></iframe>
                                     </div>
                                     <!--/First slide-->
                                 </div>

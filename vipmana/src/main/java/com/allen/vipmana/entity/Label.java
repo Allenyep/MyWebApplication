@@ -8,6 +8,15 @@ public class Label {
     private int userId;
     private int labelColorId;
     private String labelName;
+    private String labelColoruse;
+
+    public String getLabelColoruse() {
+        return labelColoruse;
+    }
+
+    public void setLabelColoruse(String labelColoruse) {
+        this.labelColoruse = labelColoruse;
+    }
 
     public int getLabelId() {
         return labelId;

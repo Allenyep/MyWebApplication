@@ -19,4 +19,7 @@ public interface AttrsFunction {
 
     //遍历所有标签
     public List<Attrs> queryAllAttr()throws Exception;
+
+    //根据id删除标签
+    public void deleteById(int attrId)throws Exception;
 }

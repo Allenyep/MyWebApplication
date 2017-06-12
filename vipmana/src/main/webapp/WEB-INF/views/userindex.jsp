@@ -137,6 +137,7 @@
                     <a class="nav-link"><i class="fa fa-search" aria-hidden="true"></i>搜索 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <% //TODO: 访客页面 %>
                     <a class="nav-link" href="visitor.jsp"><i class="fa fa-user" aria-hidden="true"></i>访客</a>
                 </li>
                 <li class="nav-item">
@@ -241,7 +242,7 @@
                             <h4 class="card-title text-center"><c:out value="${label.labelName}"/></h4>
                             <c:forEach var="attr" items="${attrs}">
                                 <c:if test="${attr.labelId==label.labelId}">
-                                    <a class="btn btn-outline-primary btn-sm btn-rounded waves-effect" target="_blank"
+                                    <a class="btn ${label.labelColoruse} btn-sm btn-rounded waves-effect" target="_blank"
                                        href="${attr.attrURL}"><strong><c:out value="${attr.attrName}"/></strong></a>
                                 </c:if>
                             </c:forEach>

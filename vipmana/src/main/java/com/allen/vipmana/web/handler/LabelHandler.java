@@ -53,6 +53,7 @@ public class LabelHandler {
 
     @RequestMapping(path = "/userLabelDelete.do")
     public String userLabelDelete(String labelId)throws Exception{
+        //TODO: 删除label必须删除对应label下的所有attr属性
         labelFunction.delete(Integer.parseInt(labelId));
         return "vip/usermainattrs";
     }

@@ -58,7 +58,6 @@ public class AttrsHandler {
 
     @RequestMapping(path = "/userattrupdate.do",method = RequestMethod.GET)
     public String userAttrUpdateView(String attrName,String attrURL,int attrId,HttpSession session)throws Exception{
-        //TODO：获取数据
         Attrs attr=new Attrs();
         attrName=new String(attrName.getBytes("ISO-8859-1"),"UTF-8");
         attr.setAttrId(attrId);
@@ -70,13 +69,25 @@ public class AttrsHandler {
 
     @RequestMapping(path = "/userattrupdate.do",method = RequestMethod.POST)
     public String userAttrUpdate(String attrName,String attrURL,int attrId,HttpSession session)throws Exception{
-        //TODO: 转发数据
-        System.out.println(attrId);
+//        System.out.println(attrId);
         try {
             attrsFunction.update(attrName,attrURL,attrId);
             session.setAttribute("message","标签修改成功");
         }catch (ThisSystemException e){
             session.setAttribute("message",e.getMessage());
+        }
+        return "vip/message";
+    }
+
+    @RequestMapping(path = "/userattrdelete.do",method = RequestMethod.GET)
+    public String userAttrDelete(int attrId,HttpSession session)throws Exception{
+        try{
+            attrsFunction.deleteById(attrId);
+            System.out.println("test==========delete");
+            session.setAttribute("message","删除成功");
+        }catch (ThisSystemException e){
+            e.printStackTrace();
+            session.setAttribute("message","删除失败");
         }
         return "vip/message";
     }

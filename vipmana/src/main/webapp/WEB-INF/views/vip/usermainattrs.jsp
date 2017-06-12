@@ -52,7 +52,7 @@
                         <td><a href="${attr.attrURL}" target="_blank">${attr.attrURL}</a></td>
                         <td><a href="${pageContext.request.contextPath}/userattrupdate.do?attrName=${attr.attrName}&attrURL=${attr.attrURL}&attrId=${attr.attrId}"
                                class="list-group-item">修改</a></td>
-                        <td><a href="${pageContext.request.contextPath}!" class="list-group-item">
+                        <td><a onclick="deleteAttr(${attr.attrId})" class="list-group-item">
                             删除</a></td>
                     </c:if>
                 </tr>
@@ -82,7 +82,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/mdb.min.js"></script>
 
 <script>
-
     function addAttr() {
         var iWidth=500; //弹出窗口的宽度;
         var iHeight=400; //弹出窗口的高度;
@@ -91,6 +90,11 @@
         window.open('${pageContext.request.contextPath}/userattradd.do?labelId=${labelId}','','scrollbars=yes,resizable=yes,height='+iHeight+
             ', width='+iWidth+', top='+iTop+', left='+iLeft);
         window.open(openUrl,"","height="+iHeight+", width="+iWidth+", top="+iTop+", left="+iLeft);
+    }
+    function deleteAttr(attrId) {
+        if(confirm("是否删除"+attrId)){
+            window.location.href="${pageContext.request.contextPath}/userattrdelete.do?attrId="+attrId;
+        }
     }
 </script>
 </html>
