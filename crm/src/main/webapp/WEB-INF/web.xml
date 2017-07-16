@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>Archetype Created Web Application</display-name>
+
+
+    <filter>
+        <description>请求应答字符编码过滤器</description>
+        <filter-name>encoding-filter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encoding-filter</filter-name>
+        <servlet-name>spring-mvc</servlet-name>
+    </filter-mapping>
+
+    <listener>
+        <description>启动Spring容器</description>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring-context.xml</param-value>
+    </context-param>
+
+    <!--加载spring配置文件-->
+    <servlet>
+        <description>spring-mvc前端控制器</description>
+        <servlet-name>spring-mvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring-mvc</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+    <!--<error-page>-->
+    <!--<error-code>500</error-code>-->
+    <!--<location>/error.jsp</location>-->
+    <!--</error-page>-->
+    <!--<error-page>-->
+        <!--<error-code>404</error-code>-->
+        <!--<location>/notfound.jsp</location>-->
+    <!--</error-page>-->
+</web-app>

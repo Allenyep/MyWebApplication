@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="LeXian@172.18.10.34">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="lexian">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="test"/>
+    <table id="5" parent="2" name="address"/>
+    <table id="6" parent="2" name="admin"/>
+    <table id="7" parent="2" name="category"/>
+    <table id="8" parent="2" name="favorite"/>
+    <table id="9" parent="2" name="pro2cate"/>
+    <table id="10" parent="2" name="production"/>
+    <table id="11" parent="2" name="shopcart"/>
+    <table id="12" parent="2" name="user"/>
+    <table id="13" parent="2" name="userorder"/>
+    <column id="14" parent="5" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="5" name="addressId">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="5" name="addressStr">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="5" name="addressPhone">
+      <Position>4</Position>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="5" name="addressName">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="5" name="addressPost">
+      <Position>6</Position>
+      <DataType>char(6)|0</DataType>
+    </column>
+    <key id="20" parent="5" name="PRIMARY">
+      <ColNames>userId
+addressId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="21" parent="5" name="FK_user2address">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <column id="22" parent="6" name="adminId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="6" name="adminAccount">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="6" name="adminPassword">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="6" name="adminName">
+      <Position>4</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="26" parent="6" name="PRIMARY">
+      <ColNames>adminId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="7" name="categoryId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="7" name="categoryTitle">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="29" parent="7" name="PRIMARY">
+      <ColNames>categoryId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="8" name="proId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="8" name="userId">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="8" name="favoriteId">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="8" name="favoriteDate">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="8" name="FK_user2favo">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="35" parent="8" name="PRIMARY">
+      <ColNames>proId
+userId
+favoriteId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="8" name="FK_pro2favo">
+      <ColNames>proId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>production</RefTableName>
+      <RefColNames>proId</RefColNames>
+    </foreign-key>
+    <foreign-key id="37" parent="8" name="FK_user2favo">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <column id="38" parent="9" name="categoryId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="9" name="proId">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="40" parent="9" name="FK_pro2cate2">
+      <ColNames>proId</ColNames>
+    </index>
+    <key id="41" parent="9" name="PRIMARY">
+      <ColNames>categoryId
+proId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="9" name="FK_pro2cate">
+      <ColNames>categoryId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>categoryId</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="9" name="FK_pro2cate2">
+      <ColNames>proId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>production</RefTableName>
+      <RefColNames>proId</RefColNames>
+    </foreign-key>
+    <column id="44" parent="10" name="proId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="10" name="proBar">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="10" name="proName">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="10" name="proPrice">
+      <Position>4</Position>
+      <DataType>decimal(5,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="10" name="proDscp">
+      <Position>5</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="10" name="proDetailDscp">
+      <Position>6</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="50" parent="10" name="proMainPic">
+      <Position>7</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="51" parent="10" name="PRIMARY">
+      <ColNames>proId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="11" name="proId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="11" name="userId">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="11" name="shopcartId">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="11" name="shopcartDate">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="11" name="shopcartStatus">
+      <Position>5</Position>
+      <DataType>decimal(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="11" name="FK_user2cart">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="58" parent="11" name="PRIMARY">
+      <ColNames>proId
+userId
+shopcartId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="59" parent="11" name="FK_pro2cart">
+      <ColNames>proId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>production</RefTableName>
+      <RefColNames>proId</RefColNames>
+    </foreign-key>
+    <foreign-key id="60" parent="11" name="FK_user2cart">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <column id="61" parent="12" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="12" name="userAccount">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="12" name="userName">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="12" name="userPassword">
+      <Position>4</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="12" name="userGender">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="66" parent="12" name="PRIMARY">
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="13" name="proId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="13" name="userId">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="13" name="orderId">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="13" name="orderDate">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="13" name="proNum">
+      <Position>5</Position>
+      <DataType>decimal(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="13" name="orderStatus">
+      <Position>6</Position>
+      <DataType>decimal(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="13" name="userOrderComment">
+      <Position>7</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <index id="74" parent="13" name="FK_user2order">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="75" parent="13" name="PRIMARY">
+      <ColNames>proId
+userId
+orderId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="13" name="FK_pro2order">
+      <ColNames>proId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>production</RefTableName>
+      <RefColNames>proId</RefColNames>
+    </foreign-key>
+    <foreign-key id="77" parent="13" name="FK_user2order">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>lexian</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

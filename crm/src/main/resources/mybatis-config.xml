@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 配置文件的根元素 -->
+<configuration>
+    <!-- 属性：定义配置外在化 -->
+    <!--<properties></properties>-->
+    <!-- 设置：定义mybatis的一些全局性设置 -->
+    <settings>
+        <!-- 具体的参数名和参数值 -->
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="defaultStatementTimeout" value="3000"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="proxyFactory" value="CGLIB"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="true"/>
+            <property name="rowBoundsWithCount" value="true"/>
+            <property name="pageSizeZero" value="true"/>
+            <!--<property name="reasonable" value="false"/>-->
+            <!--<property name="supportMethodsArguments" value="false"/>-->
+            <!--<property name="returnPageInfo" value="none"/>-->
+        </plugin>
+    </plugins>
+    <!--  &lt;!&ndash; 环境：配置mybatis的环境 &ndash;&gt;
+      <environments default="">
+          &lt;!&ndash; 环境变量：可以配置多个环境变量，比如使用多数据源时，就需要配置多个环境变量 &ndash;&gt;
+          <environment id="">
+              &lt;!&ndash; 事务管理器 &ndash;&gt;
+              <transactionManager type=""></transactionManager>
+              &lt;!&ndash; 数据源 &ndash;&gt;
+              <dataSource type=""></dataSource>
+          </environment>
+      </environments>
+      &lt;!&ndash; 数据库厂商标识 &ndash;&gt;
+      <databaseIdProvider type=""></databaseIdProvider>
+      &lt;!&ndash; 映射器：指定映射文件或者映射类 &ndash;&gt;
+      <mappers></mappers>-->
+</configuration>

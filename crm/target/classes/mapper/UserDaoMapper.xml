@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinasofti.dao.userDao">
+    <select id="select" resultType="com.chinasofti.po.User">
+        SELECT t_id as "id",
+               t_account as "account",
+               t_password as "password",
+               t_email as "email",
+               t_sex as "sex",
+               t_brithday as "brithday",
+               t_intro as "intro",
+               t_name as "name"
+         FROM t_user WHERE t_account=#{value}
+    </select>
+</mapper>
