@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="jstl">
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/jstl.jar" />
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/mysql-connector-java-5.1.40-bin.jar" />
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/servlet-api.jar" />
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/standard.jar" />
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" />
+    <archive path="C:/Users/allen/Desktop/stumessage/stumana/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
+  </library>
+  <library name="Python 3.5.3 (C:\Python\python.exe) interpreter library" />
+</eclipse-userlibraries>
+
